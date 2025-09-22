@@ -10,7 +10,7 @@ This project predicts lifestyle-related **disease risk** (Low/Medium/High) from 
 
 1. Clone repo:
    ```bash
-   git clone https://github.com/<your-org>/disease-risk.git
+   git clone https://github.com/Ravidujee19/disease-risk
    cd disease-risk
    ```
 
