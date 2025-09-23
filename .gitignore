@@ -12,14 +12,6 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data
-data/raw/*
-data/interim/*
-data/processed/*
-
-# Models
-models/*
-
 # OS
 .DS_Store
 Thumbs.db
