@@ -15,3 +15,10 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project artifacts to ignore
+# EDA reports & figures (HTML/CSV/PNGs)
+reports/before_preprocessed/
+
+# Figures path you requested
+reports/figures/before_preprocessed/

@@ -9,3 +9,20 @@ python3.11 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
+
+
+
+# run the .py before preprocess.
+# Everything (PNGs + CSV + HTML):
+python src/eda_only.py --mode all
+
+# Only classic outputs (PNGs + CSV), no HTML:
+python src/eda_only.py --mode plots
+
+# Only build HTML (reuses existing PNGs + CSV):
+python src/eda_only.py --mode html
+
+# if want to clean the data before run this
+Remove-Item -Force -ErrorAction SilentlyContinue reports\before_preprocessed\dataset_profile.csv
+Remove-Item -Force -ErrorAction SilentlyContinue reports\before_preprocessed\EDA_Report.html
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue reports\figures\before_preprocessed\*
