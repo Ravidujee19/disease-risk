@@ -17,8 +17,11 @@ __pycache__/
 Thumbs.db
 
 # Project artifacts to ignore
-# EDA reports & figures (HTML/CSV/PNGs)
-reports/before_preprocessed/
+# Ignore generated plots/reports
+reports/**/*.png
+reports/**/*.html
+reports/**/*.csv
 
-# Figures path you requested
-reports/figures/before_preprocessed/
+# But keep placeholder files so dirs stay in repo
+!reports/**/.gitkeep
+!data/**/.gitkeep
