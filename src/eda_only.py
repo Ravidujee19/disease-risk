@@ -14,11 +14,11 @@ IMG_ROOT  = Path(__file__).resolve().parent.parent / "reports" / "figures" / "be
 # HTML + dataset_profile.csv saving path
 META_DIR  = Path(__file__).resolve().parent.parent / "reports" / "before_preprocessed"
 
-TARGET = "target"            # change if your label column differs
-FIG_LIMIT_CAT = 20           # top-K categories for bar charts
-BOXPLOT_NUM_LIMIT = 12       # max numeric cols to boxplot
-BOXPLOT_MAX_CLASSES = 5      # show top-N target classes by count
-NUMERIC_THRESHOLD = 0.60     # ≥60% values convertible → treat as numeric
+TARGET = "target"            
+FIG_LIMIT_CAT = 20          
+BOXPLOT_NUM_LIMIT = 12       
+BOXPLOT_MAX_CLASSES = 5      
+NUMERIC_THRESHOLD = 0.60     
 
 # Helpers
 def save_fig(fig, path: Path, tight=True):
@@ -95,9 +95,8 @@ def make_classic_outputs(df: pd.DataFrame) -> tuple[Path, list[tuple[str, Path]]
     p = IMG_ROOT / "cardinality.png"; save_fig(fig, p)
     figs.append(("Unique values per column", p))
 
-    # Detect numeric robustly (coerce strings like "72" -> 72.0)
+    # Detect numeric robustly 
     numeric_cols = coerce_numeric_cols(df)
-    # Keep a coerced numeric copy for plotting (no mutation of original df)
     df_num = {}
     for c in numeric_cols:
         df_num[c] = pd.to_numeric(df[c], errors="coerce")
@@ -131,7 +130,7 @@ def make_classic_outputs(df: pd.DataFrame) -> tuple[Path, list[tuple[str, Path]]
                 labels = []
                 for cls in top_classes:
                     g = data.loc[data[TARGET] == cls, col].dropna().values
-                    if len(g) >= 5:  # at least 5 points to draw a reasonable box
+                    if len(g) >= 5:
                         groups.append(g)
                         labels.append(str(cls))
 
