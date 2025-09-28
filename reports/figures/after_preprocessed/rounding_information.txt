@@ -1,0 +1,8 @@
+Dataset Rounding Information
+========================================
+Date: 2025-09-28 08:10:23
+Original dataset shape: (100000, 44)
+Rounded dataset shape: (100000, 44)
+Decimal places: 6
+Numerical columns rounded: 44
+File saved: encoded_dataset_rounded.csv
