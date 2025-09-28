@@ -18,9 +18,8 @@ Thumbs.db
 
 # Project artifacts to ignore
 # Ignore generated plots/reports
-reports/**/*.png
 reports/**/*.html
-reports/**/*.csv
+
 
 # But keep placeholder files so dirs stay in repo
 !reports/**/.gitkeep
