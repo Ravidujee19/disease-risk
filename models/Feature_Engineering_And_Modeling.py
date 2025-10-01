@@ -10,16 +10,15 @@ from sklearn.utils.class_weight import compute_class_weight
 from imblearn.over_sampling import SMOTE
 import joblib
 
-# ---- paths ----
+# paths
 os.makedirs("models", exist_ok=True)
 DATA_PATH = "data/processed/training_data.csv"
 
-# ---- load ----
+# load
 data = pd.read_csv(DATA_PATH)
 
-# ---- columns ----
+# columns
 categorical_columns = ['gender', 'alcohol_consumption', 'family_history']
-# IMPORTANT: the order here must match 'categories=' below
 ordinal_columns = ['smoking_level', 'stress_level']
 
 numerical_columns = [
@@ -27,17 +26,16 @@ numerical_columns = [
     'sleep_hours','physical_activity','calorie_intake','sugar_intake'
 ]
 
-# ---- clean / coerce ----
+# clean / coerce
 # make sure stress_level is numeric
 if not np.issubdtype(data['stress_level'].dtype, np.number):
     data['stress_level'] = pd.to_numeric(data['stress_level'], errors='coerce')
 
-# ---- define category orders ----
+# define category orders 
 smoking_order = ['Non-smoker', 'Light', 'Heavy']
 stress_order  = list(range(0, 11))
 
-# ---- encoders ----
-# If your sklearn is older, use: OneHotEncoder(drop='first', sparse=False, handle_unknown='ignore')
+# encoders
 onehot_encoder   = OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore')
 ordinal_encoder  = OrdinalEncoder(
     categories=[smoking_order, stress_order],
@@ -70,12 +68,12 @@ y = data['target'].map({'healthy': 0, 'diseased': 1}).astype(int)
 # sanity check
 assert len(X) == len(y), "X and y must have same rows"
 
-# ---- split (stratified) ----
+# split (stratified) 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.30, random_state=42, stratify=y
 )
 
-# ---- scale numeric for LR stability (fit on train only) ----
+# scale numeric for LR stability (fit on train only) 
 scaler = StandardScaler()
 X_train_num = scaler.fit_transform(X_train[numerical_columns])
 X_test_num  = scaler.transform(X_test[numerical_columns])
@@ -90,7 +88,7 @@ X_test_scaled = pd.concat([
     X_test.drop(columns=numerical_columns)
 ], axis=1)
 
-# ---- imbalance handling ----
+# imbalance handling 
 # class weights from ORIGINAL y_train (not SMOTE)
 classes = np.array([0, 1])
 cw = compute_class_weight('balanced', classes=classes, y=y_train)
@@ -100,7 +98,7 @@ class_weight_dict = dict(zip(classes, cw))
 smote = SMOTE(random_state=42)
 X_train_smote, y_train_smote = smote.fit_resample(X_train_scaled, y_train)
 
-# ---- models ----
+# models
 models = {
     'Logistic Regression': LogisticRegression(max_iter=1000, class_weight='balanced'),
     'Random Forest': RandomForestClassifier(class_weight=class_weight_dict, random_state=42)
@@ -108,7 +106,6 @@ models = {
 
 def evaluate(model, X_te, y_te):
     y_pred = model.predict(X_te)
-    # probabilities for ROC-AUC
     if hasattr(model, "predict_proba"):
         y_score = model.predict_proba(X_te)[:, 1]
     elif hasattr(model, "decision_function"):
@@ -117,28 +114,23 @@ def evaluate(model, X_te, y_te):
         y_score = y_pred
     return {
         'Accuracy':  accuracy_score(y_te, y_pred),
-        'Precision': precision_score(y_te, y_pred, zero_division=0),
-        'Recall':    recall_score(y_te, y_pred, zero_division=0),
-        'F1 Score':  f1_score(y_te, y_pred, zero_division=0),
-        'ROC AUC':   roc_auc_score(y_te, y_score)
     }
 
-# ---- train & evaluate ----
+# train & evaluate
 results = {}
 for name, model in models.items():
     model.fit(X_train_smote, y_train_smote)
     results[name] = evaluate(model, X_test_scaled, y_test)
 
-results_df = pd.DataFrame(results).T.sort_values(by='ROC AUC', ascending=False)
+results_df = pd.DataFrame(results).T.sort_values(by='Accuracy', ascending=False)
 print(results_df)
 
-# ---- pick & save best ----
+# Save the best
 best_model_name = results_df.index[0]
 best_model = models[best_model_name]
 print(best_model)
 joblib.dump(best_model, "models/best_model.pkl")
 
-# (optional) save preprocessing so you can reuse consistently at inference
 joblib.dump({
     "onehot": onehot_encoder,
     "ordinal": ordinal_encoder,
