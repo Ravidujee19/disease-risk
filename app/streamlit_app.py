@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-ROOT = Path(__file__).resolve().parents[1]  # change if your structure differs
+ROOT = Path(__file__).resolve().parents[1]  
 MODEL_PATH = ROOT / "models" / "best_model.pkl"
 PREP_PATH  = ROOT / "models" / "preprocessing.joblib"
 
@@ -214,7 +214,7 @@ onehot_names = list(onehot.get_feature_names_out(categorical_cols))
 TRAIN_COL_ORDER = numerical_cols + onehot_names + ordinal_cols
 
 LABEL_MAP = {0: "Healthy Person", 1: "Diseased Person"}
-FIXED_THRESHOLD = 0.5  # hidden from UI
+FIXED_THRESHOLD = 0.5  
 
 # Session 
 if "step" not in st.session_state: st.session_state.step = 1
