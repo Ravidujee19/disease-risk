@@ -1,0 +1,24 @@
+# Core scientific stack with Python 3.13 wheels
+numpy>=2.1.0           # 3.13 supported from NumPy 2.1+ :contentReference[oaicite:0]{index=0}
+pandas>=2.2.3          # first pandas generally compatible with 3.13 :contentReference[oaicite:1]{index=1}
+scipy>=1.14.1          # 3.13 wheels available :contentReference[oaicite:2]{index=2}
+scikit-learn>=1.6.0,<1.8  # 1.6 supports Python 3.13 :contentReference[oaicite:3]{index=3}
+
+# Modeling utils
+imbalanced-learn>=0.14.0  # tested/fixes around py3.13; good with sklearn≥1.4 :contentReference[oaicite:4]{index=4}
+joblib>=1.4.2
+
+# Viz / apps
+matplotlib>=3.9.2      # cp313 mac wheels available (no compiler needed) :contentReference[oaicite:5]{index=5}
+plotly>=5.22.0
+streamlit>=1.36.0      # Streamlit supports Python 3.13 :contentReference[oaicite:6]{index=6}
+
+# MLOps
+mlflow>=3.2            # 2.14.x predates broad 3.13 support; MLflow 3 is current line :contentReference[oaicite:7]{index=7}
+
+# Explainability
+shap>=0.48.0           # PyPI lists Python 3.13 classifier; relies on numba now supporting 3.13 (0.61+) :contentReference[oaicite:8]{index=8}
+
+# Misc
+pyyaml>=6.0.1
+
