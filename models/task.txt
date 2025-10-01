@@ -1,2 +1,0 @@
-sklearn Pipeline with encoder + model
-schema: columns, encoders, metrics

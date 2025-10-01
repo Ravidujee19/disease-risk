@@ -1,6 +1,0 @@
-config.py -> paths, constants (target col, random_state)
-data_prep.py -> clean, encode, split; saves artifacts
-train.py -> train models, save best pipeline + metrics
-evaluate.py -> metrics, ROC/PR plots, confusion matrix
-explain.py -> SHAP/feature importance plots
-utils.py -> for utilities
