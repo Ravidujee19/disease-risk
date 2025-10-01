@@ -49,7 +49,7 @@ disease-risk-main/
 ## Installation & Setup
 1. Clone this repository:
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/Ravidujee19/disease-risk
    cd disease-risk-main
    ```
 
