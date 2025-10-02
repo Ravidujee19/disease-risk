@@ -1,6 +1,6 @@
 DETAILED CORRELATION ANALYSIS REPORT
 ==================================================
-Generated on: 2025-09-28 13:38:17
+Generated on: 2025-10-02 04:13:02
 Dataset shape: (100000, 44)
 Target variable: target
 Number of features: 43
@@ -23,51 +23,51 @@ Perfect Negative (r=-1)             :  0 features (  0.0%)
 
 Weak Positive (0<r<0.4):
 --------------------------------------------------
-  heart_rate                     : +0.000
-  caffeine_intake                : +0.000
-  calorie_intake                 : +0.000
-  sugar_intake                   : +0.000
-  sunlight_exposure              : +0.000
-  stress_level                   : +0.001
-  insurance                      : +0.001
-  gender                         : +0.001
-  device_usage                   : +0.001
-  physical_activity              : +0.001
-  height                         : +0.001
-  smoking_level                  : +0.002
-  mental_health_support          : +0.002
-  water_intake                   : +0.002
-  blood_pressure                 : +0.003
-  meals_per_day                  : +0.003
-  healthcare_access              : +0.004
-  exercise_type                  : +0.004
-  daily_steps                    : +0.005
-  alcohol_consumption            : +0.005
-  work_hours                     : +0.011
+  heart_rate                     : +0.000078
+  caffeine_intake                : +0.000137
+  calorie_intake                 : +0.000181
+  sugar_intake                   : +0.000213
+  sunlight_exposure              : +0.000419
+  stress_level                   : +0.000767
+  insurance                      : +0.000904
+  gender                         : +0.000916
+  device_usage                   : +0.001230
+  physical_activity              : +0.001328
+  height                         : +0.001400
+  smoking_level                  : +0.001578
+  mental_health_support          : +0.001678
+  water_intake                   : +0.001973
+  blood_pressure                 : +0.002764
+  meals_per_day                  : +0.002914
+  healthcare_access              : +0.003740
+  exercise_type                  : +0.004325
+  daily_steps                    : +0.004856
+  alcohol_consumption            : +0.004954
+  work_hours                     : +0.011073
 
 ============== NEGATIVE CORRELATIONS (Ascending Order) ===============
 
 Weak Negative (-0.4≤r<0):
 --------------------------------------------------
-  age                            : -0.007
-  job_type                       : -0.004
-  bmi                            : -0.003
-  weight                         : -0.002
-  sleep_quality                  : -0.002
-  sleep_hours                    : -0.002
-  education_level                : -0.002
-  occupation                     : -0.002
-  cholesterol                    : -0.001
-  mental_health_score            : -0.001
-  diet_type                      : -0.001
-  glucose                        : -0.001
-  daily_supplement_dosage        : -0.000
-  insulin                        : -0.000
-  waist_size                     : -0.000
-  screen_time                    : -0.000
-  income                         : -0.000
-  family_history                 : -0.000
-  pet_owner                      : -0.000
+  age                            : -0.006951
+  job_type                       : -0.003513
+  bmi                            : -0.002872
+  weight                         : -0.002478
+  sleep_quality                  : -0.002267
+  sleep_hours                    : -0.001712
+  education_level                : -0.001553
+  occupation                     : -0.001546
+  cholesterol                    : -0.001467
+  mental_health_score            : -0.001360
+  diet_type                      : -0.001321
+  glucose                        : -0.000525
+  daily_supplement_dosage        : -0.000476
+  insulin                        : -0.000338
+  waist_size                     : -0.000317
+  screen_time                    : -0.000248
+  income                         : -0.000199
+  family_history                 : -0.000133
+  pet_owner                      : -0.000098
 
 ======================== NO CORRELATION (r=0) ========================
 No features with exactly zero correlation.
