@@ -1,3 +1,0 @@
-eda notebook
-preprocessing notebook
-modeling notebook

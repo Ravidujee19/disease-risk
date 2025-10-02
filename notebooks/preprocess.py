@@ -7,7 +7,7 @@ print(data.head())
 
 
 ##we drop these because they are derived versions of bmi and may confuse our model
-drop_cols = ['survey_code', 'bmi_estimated', 'bmi_scaled', 'bmi_corrected']         
+drop_cols = ['survey_code', 'bmi_estimated', 'bmi_scaled', 'bmi_corrected','education_level','job_type','occupation','income','pet_owner','device_usage','gene_marker_flag','environmental_risk_score','bmi','daily_steps','healthcare_access','insurance','work_hours','height','weight','sleep_quality','work_hours','sunlight_exposure','mental_health_support','mental_health_score','electrolyte_level','screen_time','caffeine_intake','meals_per_day','heart_rate','diet_type','exercise_type','daily_supplement_dosage','water_intake']         
 data = data.drop(columns=[c for c in drop_cols if c in data.columns])
 print("Shape after dropping redundant columns:", data.shape)
 
