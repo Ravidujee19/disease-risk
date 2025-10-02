@@ -1,0 +1,36 @@
+INSTRUCTIONS FOR MAC
+
+        macOS (zsh) — Python 3.13.7
+# 1) Create & activate a 3.13 venv
+python3.13 -m venv .venv
+source .venv/bin/activate
+
+# 2) Upgrade installer tools inside the venv
+python -m pip install --upgrade pip setuptools wheel
+
+# 3) Install project deps
+pip install -r requirements_mac.txt
+
+# Run EDA (before preprocess)
+
+# Everything (PNGs + CSV + HTML):
+python src/eda_only.py --mode all
+
+# Only classic outputs (PNGs + CSV), no HTML:
+python src/eda_only.py --mode plots
+
+# Only build HTML (reuses existing PNGs + CSV):
+python src/eda_only.py --mode html
+
+# (Optional) Clean old “before_preprocessed” artifacts
+rm -f  reports/before_preprocessed/dataset_profile.csv
+rm -f  reports/before_preprocessed/EDA_Report.html
+rm -rf reports/figures/before_preprocessed/*
+
+# Train models
+python models/Feature_Engineering_And_Modeling.py
+
+# After training: run Streamlit apps
+source .venv/bin/activate
+streamlit run app/streamlit_app.py --server.port 8501
+streamlit run app/demo_app.py --server.port 8502
