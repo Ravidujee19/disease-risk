@@ -6,11 +6,24 @@ print("Initial shape:", data.shape)
 print(data.head())
 
 
+# Percentage of negative values
+neg_percentage = (data["daily_supplement_dosage"] < 0).mean() * 100
+print(f"Negative values: {neg_percentage:.2f}%")
+
 ##we drop these because they are derived versions of bmi and may confuse our model
-drop_cols = ['survey_code', 'bmi_estimated', 'bmi_scaled', 'bmi_corrected','education_level','job_type','occupation','income','pet_owner','device_usage','gene_marker_flag','environmental_risk_score','bmi','daily_steps','healthcare_access','insurance','work_hours','height','weight','sleep_quality','work_hours','sunlight_exposure','mental_health_support','mental_health_score','electrolyte_level','screen_time','caffeine_intake','meals_per_day','heart_rate','diet_type','exercise_type','daily_supplement_dosage','water_intake']         
+drop_cols = ['bmi','daily_supplement_dosage','survey_code','bmi_estimated','bmi_scaled','bmi_corrected']                
 data = data.drop(columns=[c for c in drop_cols if c in data.columns])
 print("Shape after dropping redundant columns:", data.shape)
 
+
+missing_values = data.isnull().sum()
+missing_percentage = (missing_values / len(data)) * 100
+print(missing_percentage.sort_values(ascending=False))
+
+columns_to_drop_missing = missing_percentage[missing_percentage > 20].index.tolist()
+data = data.drop(columns=columns_to_drop_missing, axis=1)
+print("Columns dropped due to more than 20% missing values:", columns_to_drop_missing)
+print("Shape after dropping columns:", data.shape)
 
 # Separate numeric and categorical columns
 num_cols = data.select_dtypes(include='number').columns.tolist()
@@ -34,13 +47,7 @@ for col in cat_cols:
 
 
 ##standardizing remove extra spaces of all categorical cols
-cat_cols = [
-    'gender', 'sleep_quality', 'alcohol_consumption', 'smoking_level', 
-    'mental_health_support', 'education_level', 'job_type', 'occupation', 
-    'diet_type', 'exercise_type', 'device_usage', 'healthcare_access', 
-    'insurance', 'sunlight_exposure', 'caffeine_intake', 'family_history', 
-    'pet_owner', 'target'
-]
+
 
 # Remove extra spaces from all categorical columns
 for col in cat_cols:
@@ -58,7 +65,7 @@ for col in num_cols:
 # Save fully preprocessed dataset
 
 data.to_csv("data/processed/preprocessed_data.csv", index=False)
-print("Preprocessed dataset saved to data/processed/preprocess.csv")
+print("Preprocessed dataset saved to data/processed/preprocessed_data.csv")
 
 # split the data to Train/test and save seperate csv's
 
