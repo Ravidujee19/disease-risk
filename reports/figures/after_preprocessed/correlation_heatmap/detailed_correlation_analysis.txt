@@ -1,20 +1,10 @@
-DETAILED CORRELATION ANALYSIS REPORT
-==================================================
-Generated on: 2025-10-02 04:13:02
-Dataset shape: (100000, 44)
-Target variable: target
-Number of features: 43
-
-==================================================
-
 OVERALL DISTRIBUTION:
-------------------------------------------------------------
 Perfect Positive (r=1)              :  0 features (  0.0%)
 Strong Positive (0.8≤r<1)           :  0 features (  0.0%)
 Moderate Positive (0.4≤r<0.8)       :  0 features (  0.0%)
-Weak Positive (0<r<0.4)             : 21 features ( 48.8%)
+Weak Positive (0<r<0.4)             : 18 features ( 47.4%)
 No Correlation (r=0)                :  0 features (  0.0%)
-Weak Negative (-0.4≤r<0)            : 19 features ( 44.2%)
+Weak Negative (-0.4≤r<0)            : 17 features ( 44.7%)
 Moderate Negative (-0.8≤r<-0.4)     :  0 features (  0.0%)
 Strong Negative (-1<r<-0.8)         :  0 features (  0.0%)
 Perfect Negative (r=-1)             :  0 features (  0.0%)
@@ -24,7 +14,6 @@ Perfect Negative (r=-1)             :  0 features (  0.0%)
 Weak Positive (0<r<0.4):
 --------------------------------------------------
   heart_rate                     : +0.000078
-  caffeine_intake                : +0.000137
   calorie_intake                 : +0.000181
   sugar_intake                   : +0.000213
   sunlight_exposure              : +0.000419
@@ -36,13 +25,11 @@ Weak Positive (0<r<0.4):
   height                         : +0.001400
   smoking_level                  : +0.001578
   mental_health_support          : +0.001678
-  water_intake                   : +0.001973
+  water_intake                   : +0.001974
   blood_pressure                 : +0.002764
   meals_per_day                  : +0.002914
   healthcare_access              : +0.003740
-  exercise_type                  : +0.004325
   daily_steps                    : +0.004856
-  alcohol_consumption            : +0.004954
   work_hours                     : +0.011073
 
 ============== NEGATIVE CORRELATIONS (Ascending Order) ===============
@@ -51,7 +38,6 @@ Weak Negative (-0.4≤r<0):
 --------------------------------------------------
   age                            : -0.006951
   job_type                       : -0.003513
-  bmi                            : -0.002872
   weight                         : -0.002478
   sleep_quality                  : -0.002267
   sleep_hours                    : -0.001712
@@ -61,10 +47,9 @@ Weak Negative (-0.4≤r<0):
   mental_health_score            : -0.001360
   diet_type                      : -0.001321
   glucose                        : -0.000525
-  daily_supplement_dosage        : -0.000476
-  insulin                        : -0.000338
+  insulin                        : -0.000339
   waist_size                     : -0.000317
-  screen_time                    : -0.000248
+  screen_time                    : -0.000249
   income                         : -0.000199
   family_history                 : -0.000133
   pet_owner                      : -0.000098
@@ -74,24 +59,20 @@ No features with exactly zero correlation.
 
 ========================= SUMMARY STATISTICS =========================
 ----------------------------------------------------------------------
-Total features analyzed          : 43
-Features with positive correlation : 21
-Features with negative correlation : 19
+Total features analyzed          : 38
+Features with positive correlation : 18
+Features with negative correlation : 17
 Features with no correlation (r=0) : 0
-Mean absolute correlation        : 0.002
-Standard deviation               : 0.003
 Strongest positive correlation   : 0.011
 Strongest negative correlation   : -0.007
 
 ==================== ALL CORRELATIONS WITH TARGET VARIABLE =====================
 work_hours                     : +0.011073
-alcohol_consumption            : +0.004954
 daily_steps                    : +0.004856
-exercise_type                  : +0.004325
 healthcare_access              : +0.003740
 meals_per_day                  : +0.002914
 blood_pressure                 : +0.002764
-water_intake                   : +0.001973
+water_intake                   : +0.001974
 mental_health_support          : +0.001678
 smoking_level                  : +0.001578
 height                         : +0.001400
@@ -103,15 +84,13 @@ stress_level                   : +0.000767
 sunlight_exposure              : +0.000419
 sugar_intake                   : +0.000213
 calorie_intake                 : +0.000181
-caffeine_intake                : +0.000137
 heart_rate                     : +0.000078
 pet_owner                      : -0.000098
 family_history                 : -0.000133
 income                         : -0.000199
-screen_time                    : -0.000248
+screen_time                    : -0.000249
 waist_size                     : -0.000317
-insulin                        : -0.000338
-daily_supplement_dosage        : -0.000476
+insulin                        : -0.000339
 glucose                        : -0.000525
 diet_type                      : -0.001321
 mental_health_score            : -0.001360
@@ -121,7 +100,6 @@ education_level                : -0.001553
 sleep_hours                    : -0.001712
 sleep_quality                  : -0.002267
 weight                         : -0.002478
-bmi                            : -0.002872
 job_type                       : -0.003513
 age                            : -0.006951
 electrolyte_level              : +nan

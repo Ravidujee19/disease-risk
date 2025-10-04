@@ -5,8 +5,6 @@ sleep_quality,Excellent,0
 sleep_quality,Fair,1
 sleep_quality,Good,2
 sleep_quality,Poor,3
-alcohol_consumption,Occasionally,0
-alcohol_consumption,Regularly,1
 smoking_level,Heavy,0
 smoking_level,Light,1
 smoking_level,Non-smoker,2
@@ -32,9 +30,6 @@ diet_type,Keto,0
 diet_type,Omnivore,1
 diet_type,Vegan,2
 diet_type,Vegetarian,3
-exercise_type,Cardio,0
-exercise_type,Mixed,1
-exercise_type,Strength,2
 device_usage,High,0
 device_usage,Low,1
 device_usage,Moderate,2
@@ -46,8 +41,6 @@ insurance,Yes,1
 sunlight_exposure,High,0
 sunlight_exposure,Low,1
 sunlight_exposure,Moderate,2
-caffeine_intake,High,0
-caffeine_intake,Moderate,1
 family_history,No,0
 family_history,Yes,1
 pet_owner,No,0

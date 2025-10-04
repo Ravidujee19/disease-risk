@@ -1,29 +1,6 @@
 TWO-WAY FREQUENCY TABLES REPORT
-============================================================
-Dataset: 100000 records
-Target Variable: target
-Categorical Variables Analyzed: 10
-============================================================
 
-
-TABLE 1: CAFFEINE_INTAKE vs TARGET
-----------------------------------------
-FREQUENCY COUNTS:
-target           diseased  healthy     All
-caffeine_intake                           
-High                 9981    23387   33368
-Moderate            19922    46710   66632
-All                 29903    70097  100000
-
-COLOMUN PERCENTAGES:
-target           diseased  healthy
-caffeine_intake                   
-High               33.380   33.360
-Moderate           66.620   66.640
-----------------------------------------
-
-
-TABLE 2: SUNLIGHT_EXPOSURE vs TARGET
+TABLE 1: SUNLIGHT_EXPOSURE vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target             diseased  healthy     All
@@ -36,13 +13,13 @@ All                   29903    70097  100000
 COLOMUN PERCENTAGES:
 target             diseased  healthy
 sunlight_exposure                   
-High                 33.110   33.070
-Low                  33.450   33.470
-Moderate             33.430   33.460
+High                  33.11    33.07
+Low                   33.45    33.47
+Moderate              33.43    33.46
 ----------------------------------------
 
 
-TABLE 3: INSURANCE vs TARGET
+TABLE 2: INSURANCE vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target     diseased  healthy     All
@@ -54,12 +31,12 @@ All           29903    70097  100000
 COLOMUN PERCENTAGES:
 target     diseased  healthy
 insurance                   
-No           49.950   49.850
-Yes          50.050   50.150
+No            49.95    49.85
+Yes           50.05    50.15
 ----------------------------------------
 
 
-TABLE 4: GENDER vs TARGET
+TABLE 3: GENDER vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target  diseased  healthy     All
@@ -71,12 +48,12 @@ All        29903    70097  100000
 COLOMUN PERCENTAGES:
 target  diseased  healthy
 gender                   
-Female    49.940   49.840
-Male      50.060   50.160
+Female     49.94    49.84
+Male       50.06    50.16
 ----------------------------------------
 
 
-TABLE 5: DEVICE_USAGE vs TARGET
+TABLE 4: DEVICE_USAGE vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target        diseased  healthy     All
@@ -89,13 +66,13 @@ All              29903    70097  100000
 COLOMUN PERCENTAGES:
 target        diseased  healthy
 device_usage                   
-High            33.560   33.560
-Low             33.350   33.130
-Moderate        33.090   33.310
+High             33.56    33.56
+Low              33.35    33.13
+Moderate         33.09    33.31
 ----------------------------------------
 
 
-TABLE 6: SMOKING_LEVEL vs TARGET
+TABLE 5: SMOKING_LEVEL vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target         diseased  healthy     All
@@ -108,13 +85,13 @@ All               29903    70097  100000
 COLOMUN PERCENTAGES:
 target         diseased  healthy
 smoking_level                   
-Heavy            33.400   33.130
-Light            33.250   33.510
-Non-smoker       33.350   33.360
+Heavy             33.40    33.13
+Light             33.25    33.51
+Non-smoker        33.35    33.36
 ----------------------------------------
 
 
-TABLE 7: MENTAL_HEALTH_SUPPORT vs TARGET
+TABLE 6: MENTAL_HEALTH_SUPPORT vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target                 diseased  healthy     All
@@ -126,12 +103,12 @@ All                       29903    70097  100000
 COLOMUN PERCENTAGES:
 target                 diseased  healthy
 mental_health_support                   
-No                       50.230   50.050
-Yes                      49.770   49.950
+No                        50.23    50.05
+Yes                       49.77    49.95
 ----------------------------------------
 
 
-TABLE 8: HEALTHCARE_ACCESS vs TARGET
+TABLE 7: HEALTHCARE_ACCESS vs TARGET
 ----------------------------------------
 FREQUENCY COUNTS:
 target             diseased  healthy     All
@@ -144,49 +121,8 @@ All                   29903    70097  100000
 COLOMUN PERCENTAGES:
 target             diseased  healthy
 healthcare_access                   
-Good                 33.620   33.350
-Moderate             33.380   33.260
-Poor                 33.000   33.400
+Good                  33.62    33.35
+Moderate              33.38    33.26
+Poor                  33.00    33.40
 ----------------------------------------
 
-
-TABLE 9: EXERCISE_TYPE vs TARGET
-----------------------------------------
-FREQUENCY COUNTS:
-target         diseased  healthy     All
-exercise_type                           
-Cardio             7583    17405   24988
-Mixed              7352    17426   24778
-Strength          14968    35266   50234
-All               29903    70097  100000
-
-COLOMUN PERCENTAGES:
-target         diseased  healthy
-exercise_type                   
-Cardio           25.360   24.830
-Mixed            24.590   24.860
-Strength         50.060   50.310
-----------------------------------------
-
-
-TABLE 10: ALCOHOL_CONSUMPTION vs TARGET
-----------------------------------------
-FREQUENCY COUNTS:
-target               diseased  healthy     All
-alcohol_consumption                           
-Occasionally            21399    49819   71218
-Regularly                8504    20278   28782
-All                     29903    70097  100000
-
-COLOMUN PERCENTAGES:
-target               diseased  healthy
-alcohol_consumption                   
-Occasionally           71.560   71.070
-Regularly              28.440   28.930
-----------------------------------------
-
-
-SUMMARY
-========================================
-Total tables generated: 10
-Output file: two_way_tables.txt
